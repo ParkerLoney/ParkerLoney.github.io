@@ -80,7 +80,7 @@ svg { width: 1em; height: 1em; flex: none; }
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%); }
 .hero-wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; width: 100%; }
 .hero h1 { font-size: clamp(40px, 5.4vw, 72px); font-weight: 800; margin: 22px 0 20px; letter-spacing: -0.035em; line-height: 1.02; }
-.hero h1 .ln { display: block; overflow: hidden; padding-bottom: .08em; }
+.hero h1 .ln { display: block; overflow: hidden; padding-bottom: .2em; margin-bottom: -.16em; }
 .hero h1 .ln > span { display: inline-block; }
 .grad { background: linear-gradient(95deg, #8ea0ff 0%, #b46bff 45%, #ff7ab8 90%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
 .lead { font-size: clamp(17px, 1.6vw, 19px); color: var(--muted); max-width: 500px; }
@@ -220,7 +220,6 @@ footer a:hover { color: var(--text); }
   .aurora i:nth-child(2) { animation-duration: 28s; animation-delay: -8s; }
   .aurora i:nth-child(3) { animation-duration: 32s; animation-delay: -14s; }
   .track { animation: marquee 40s linear infinite; }
-  .ticker:hover .track { animation-play-state: paused; }
   .pill b { animation: pulse 2.4s ease-out infinite; }
   .dial { animation: spin 8s linear infinite paused; }
 }
