@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0f0d2a">
+<meta name="theme-color" content="#09081a">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy | WL Digital</title>
   <meta name="description" content="The privacy policy for every WL Digital game and watch face.">
@@ -14,13 +14,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="assets/logo.png" alt="WL Digital logo" width="36" height="36">WL <span>DIGITAL</span></a>
+    <a class="brand" href="index.html" aria-label="WL Digital home"><img src="assets/wl-mark.png" alt="WL" width="38" height="38"><span>Digital</span></a>
     <nav class="nav">
       <a href="index.html#games">Games</a>
-      <a href="index.html#watchfaces">Watch Faces</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="index.html#watchfaces">Watch faces</a>
+      <a href="index.html#contact" class="hide-sm">Contact</a>
     </nav>
   </div>
 </header>
@@ -129,9 +130,10 @@
 </main>
 <footer>
   <div class="wrap">
-    <span>© 2026 WL Digital. All rights reserved.</span>
-    <span><a href="index.html">Home</a></span>
+    <a class="brand sm" href="index.html"><img src="assets/wl-mark.png" alt="WL" width="28" height="28"><span>Digital</span></a>
+    <span>© <span id="y">2026</span> WL Digital · <a href="index.html">Home</a></span>
   </div>
 </footer>
+<script src="site.js" defer></script>
 </body>
 </html>

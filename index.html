@@ -2,265 +2,223 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0f0d2a">
+  <meta name="theme-color" content="#09081a">
   <title>WL Digital | Mobile Games &amp; Wear OS Watch Faces</title>
-  <meta name="description" content="WL Digital is an independent studio making colorful mobile games (Merge Realms, Rollbound, Lumio) and Wear OS watch faces (Pixel Style Digital Pro, Orbit Digital, Material You 3 Digital, Liquid Glass 2).">
-  <meta property="og:title" content="WL Digital | Mobile Games &amp; Wear OS Watch Faces">
-  <meta property="og:description" content="Colorful mobile games worth coming back to, plus clean digital watch faces for Wear OS.">
-  <meta property="og:image" content="assets/games/merge-realms-feature.webp">
+  <meta name="description" content="WL Digital makes colorful mobile games (Merge Realms, Rollbound, Lumio) and clean Wear OS watch faces.">
+  <meta property="og:title" content="WL Digital">
+  <meta property="og:description" content="Colorful mobile games and clean Wear OS watch faces.">
+  <meta property="og:image" content="https://parkerloney.github.io/assets/games/merge-realms-feature.webp">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path fill="#fff" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2-1.1 2.8-2.2.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.9.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1.1.1 2.1-.5 2.8-1.3z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7zm0 2.9V17h16V9.9l-8 5z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></symbol>
+</svg>
 
+<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="WL Digital home"><img src="assets/wl-mark.png" alt="WL" width="40" height="40"><span>Digital</span></a>
+    <a class="brand" href="#top" aria-label="WL Digital home"><img src="assets/wl-mark.png" alt="WL" width="38" height="38"><span>Digital</span></a>
     <nav class="nav">
       <a href="#games">Games</a>
-      <a href="#watchfaces">Watch Faces</a>
-      <a href="#about" class="hide-sm">About</a>
-      <a href="privacy.html" class="hide-sm">Privacy</a>
+      <a href="#watchfaces">Watch faces</a>
+      <a href="#contact" class="hide-sm">Contact</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="orb a"></div><div class="orb b"></div>
-  <span class="star" style="top:12%;left:6%">✦</span>
-  <span class="star" style="top:70%;left:3%;font-size:10px">✦</span>
-  <span class="star" style="top:20%;right:8%">✦</span>
-  <span class="star" style="top:85%;right:20%;font-size:10px">✦</span>
-  <div class="wrap">
-    <div>
-      <div class="eyebrow">Independent studio</div>
-      <h1>Mobile games <em>worth coming back to</em></h1>
-      <div class="hero-rule"></div>
-      <p>Colorful mobile games and clean Wear OS watch faces.</p>
-      <div class="btns">
-        <a class="btn" href="#games">See the games</a>
-        <a class="btn ghost" href="#watchfaces">Watch faces</a>
+<main id="top">
+  <section class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="wrap hero-wrap">
+      <div class="hero-copy">
+        <span class="pill"><b></b>Independent studio</span>
+        <h1><span class="ln"><span>Games worth</span></span><span class="ln"><span class="grad">coming back to.</span></span></h1>
+        <p class="lead">Colorful mobile games and clean Wear OS watch faces, out now on Google Play and the App Store.</p>
+        <div class="cta">
+          <a class="btn" href="#games">Explore games</a>
+          <a class="btn ghost" href="#watchfaces">Watch faces</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="stack" data-depth>
+          <img class="p p1" src="assets/games/rollbound-phone-1.webp" alt="" width="480" height="853">
+          <img class="p p2" src="assets/games/merge-realms-phone-1.webp" alt="" width="480" height="853">
+          <img class="p p3" src="assets/games/lumio-phone-1.webp" alt="" width="480" height="853">
+          <div class="watch"><img src="assets/watchfaces/pixel-style-pro.webp" alt="" width="450" height="450"></div>
+        </div>
       </div>
     </div>
-    <div class="hero-art">
-      <img class="phone" src="assets/games/merge-realms-phone-1.webp" alt="Merge Realms gameplay" width="480" height="853">
-      <div class="watch"><img src="assets/watchfaces/pixel-style-pro.webp" alt="Pixel Style Digital Pro watch face"></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="games">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Games</div>
-      <h2>Our games</h2>
-      <p>On Google Play and the App Store.</p>
-    </div>
+  <div class="ticker" aria-hidden="true"><div class="track"><span class="tk"><img src="assets/games/merge-realms-icon.webp" alt="" width="40" height="40" loading="lazy">Merge Realms</span><span class="tk"><img src="assets/watchfaces/orbit.webp" alt="" width="40" height="40" loading="lazy">Orbit Digital</span><span class="tk"><img src="assets/games/rollbound-icon.webp" alt="" width="40" height="40" loading="lazy">Rollbound</span><span class="tk"><img src="assets/watchfaces/pixel-style-pro.webp" alt="" width="40" height="40" loading="lazy">Pixel Style Pro</span><span class="tk"><img src="assets/games/lumio-icon.webp" alt="" width="40" height="40" loading="lazy">Lumio</span><span class="tk"><img src="assets/watchfaces/material-you.webp" alt="" width="40" height="40" loading="lazy">Material You 3</span><span class="tk"><img src="assets/watchfaces/glass.webp" alt="" width="40" height="40" loading="lazy">Liquid Glass 2</span><span class="tk"><img src="assets/watchfaces/galaxy-digital.webp" alt="" width="40" height="40" loading="lazy">Galaxy Digital</span><span class="tk"><img src="assets/games/merge-realms-icon.webp" alt="" width="40" height="40" loading="lazy">Merge Realms</span><span class="tk"><img src="assets/watchfaces/orbit.webp" alt="" width="40" height="40" loading="lazy">Orbit Digital</span><span class="tk"><img src="assets/games/rollbound-icon.webp" alt="" width="40" height="40" loading="lazy">Rollbound</span><span class="tk"><img src="assets/watchfaces/pixel-style-pro.webp" alt="" width="40" height="40" loading="lazy">Pixel Style Pro</span><span class="tk"><img src="assets/games/lumio-icon.webp" alt="" width="40" height="40" loading="lazy">Lumio</span><span class="tk"><img src="assets/watchfaces/material-you.webp" alt="" width="40" height="40" loading="lazy">Material You 3</span><span class="tk"><img src="assets/watchfaces/glass.webp" alt="" width="40" height="40" loading="lazy">Liquid Glass 2</span><span class="tk"><img src="assets/watchfaces/galaxy-digital.webp" alt="" width="40" height="40" loading="lazy">Galaxy Digital</span></div></div>
 
-    <article class="game reveal">
-      <div class="game-media"><img class="feature" src="assets/games/merge-realms-feature.webp" alt="Merge Realms" width="1024" height="500"></div>
-      <div class="game-body">
-        <div class="game-title">
-          <img src="assets/games/merge-realms-icon.webp" alt="" width="64" height="64">
-          <h3>Merge Realms<small>Fantasy merge puzzle</small></h3>
-        </div>
-        <p>Match relics, merge them up to a dragon, and clear ten magical realms.</p>
-        <div class="btns">
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.mergerealms" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-          <a class="store" href="https://apps.apple.com/us/app/merge-realms-match-merge/id6817056092" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2-1.1 2.8-2.2.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.9.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1.1.1 2.1-.5 2.8-1.3z"/></svg><span><small>DOWNLOAD ON</small><b>App Store</b></span></a>
-        </div>
+  <section id="games" class="games">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="kicker">Games</span>
+        <h2>Pick one up. Put it down. Come back.</h2>
       </div>
-      <div class="shots">
-        <img src="assets/games/merge-realms-phone-1.webp" alt="Merge Realms screenshot 1" loading="lazy">
-        <img src="assets/games/merge-realms-phone-2.webp" alt="Merge Realms screenshot 2" loading="lazy">
-        <img src="assets/games/merge-realms-phone-3.webp" alt="Merge Realms screenshot 3" loading="lazy">
-      </div>
-    </article>
-
-    <article class="game flip reveal">
-      <div class="game-media"><img class="feature" src="assets/games/rollbound-feature.webp" alt="Rollbound" width="1024" height="500"></div>
-      <div class="game-body">
-        <div class="game-title">
-          <img src="assets/games/rollbound-icon.webp" alt="" width="64" height="64">
-          <h3>Rollbound<small>A dice roguelite</small></h3>
-        </div>
-        <p>Roll, hold and score dice hands, then break the rules with 99 charms. No ads.</p>
-        <div class="btns">
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.rollbound" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-          <a class="store" href="https://apps.apple.com/us/app/rollbound-a-dice-roguelite/id6820359263" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2-1.1 2.8-2.2.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.9.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1.1.1 2.1-.5 2.8-1.3z"/></svg><span><small>DOWNLOAD ON</small><b>App Store</b></span></a>
-        </div>
-      </div>
-      <div class="update reveal">
-        <picture>
-          <source media="(max-width: 600px)" srcset="assets/games/rollbound-november-tall.webp">
-          <img src="assets/games/rollbound-november.webp" alt="Rollbound November update: a mythic card above five dice in the snow" loading="lazy" width="1280" height="720">
-        </picture>
-        <div class="update-body">
-          <div class="eyebrow">New in November · version 0.4</div>
-          <h4>New charms, themes and a mythic rarity</h4>
-          <p>46 new charms, a Mythic rarity, and Winter and Deep Sea table themes.</p>
-        </div>
-      </div>
-      <div class="shots">
-        <img src="assets/games/rollbound-phone-1.webp" alt="Rollbound screenshot 1" loading="lazy">
-        <img src="assets/games/rollbound-phone-2.webp" alt="Rollbound screenshot 2" loading="lazy">
-        <img src="assets/games/rollbound-phone-3.webp" alt="Rollbound screenshot 3" loading="lazy">
-      </div>
-    </article>
-
-    <article class="game reveal">
-      <div class="game-media"><img class="feature" src="assets/games/lumio-feature.webp" alt="Lumio: Connect the Dots" width="1024" height="500"></div>
-      <div class="game-body">
-        <div class="game-title">
-          <img src="assets/games/lumio-icon.webp" alt="" width="64" height="64">
-          <h3>Lumio: Connect the Dots<small>Relaxing line puzzle</small></h3>
-        </div>
-        <p>Connect the dots, fill the grid, never cross. 500+ calm levels.</p>
-        <div class="btns">
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.lumio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-          <a class="store" href="https://apps.apple.com/us/app/lumio-connect-the-dots/id6817855439" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2-1.1 2.8-2.2.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.9.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1.1.1 2.1-.5 2.8-1.3z"/></svg><span><small>DOWNLOAD ON</small><b>App Store</b></span></a>
-        </div>
-      </div>
-      <div class="shots">
-        <img src="assets/games/lumio-phone-1.webp" alt="Lumio screenshot 1" loading="lazy">
-        <img src="assets/games/lumio-phone-2.webp" alt="Lumio screenshot 2" loading="lazy">
-        <img src="assets/games/lumio-phone-3.webp" alt="Lumio screenshot 3" loading="lazy">
-      </div>
-    </article>
-  </div>
-</section>
-
-<section id="watchfaces">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Wear OS</div>
-      <h2>Watch faces</h2>
-      <p>Digital faces for round Wear OS watches.</p>
-    </div>
-    <div class="faces-group reveal">
-      <h3>WL Digital</h3>
       
+    <article class="game" id="merge-realms" style="--c1:#a56bff;--c2:#ff8a3d">
+      <div class="game-info">
+        <a class="feature reveal spot" href="https://play.google.com/store/apps/details?id=com.wldigital.mergerealms" target="_blank" rel="noopener" aria-label="Merge Realms on Google Play">
+          <img src="assets/games/merge-realms-feature.webp" alt="Merge Realms artwork" width="1024" height="500" loading="lazy" decoding="async">
+        </a>
+        <div class="game-title reveal">
+          <img src="assets/games/merge-realms-icon.webp" alt="" width="64" height="64" loading="lazy">
+          <div><h3>Merge Realms</h3><span>Fantasy merge puzzle</span></div>
+        </div>
+        <p class="reveal">Match relics, merge them up to a dragon, and clear ten magical realms.</p>
+        <ul class="tags reveal"><li>10 realms</li><li>5 power-ups</li><li>Daily rewards</li></ul>
+        <div class="stores reveal"><a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.mergerealms" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a><a class="store" href="https://apps.apple.com/us/app/merge-realms-match-merge/id6817056092" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small><b>App Store</b></span></a></div>
+      </div>
+      <div class="fan reveal" aria-hidden="false"><img class="shot s1" src="assets/games/merge-realms-phone-1.webp" alt="Merge Realms screenshot 1" width="480" height="853" loading="lazy" decoding="async"><img class="shot s2" src="assets/games/merge-realms-phone-2.webp" alt="Merge Realms screenshot 2" width="480" height="853" loading="lazy" decoding="async"><img class="shot s3" src="assets/games/merge-realms-phone-3.webp" alt="Merge Realms screenshot 3" width="480" height="853" loading="lazy" decoding="async"></div>
+    </article>
+    <article class="game flip" id="rollbound" style="--c1:#2fd27a;--c2:#ffc93c">
+      <div class="game-info">
+        <a class="feature reveal spot" href="https://play.google.com/store/apps/details?id=com.wldigital.rollbound" target="_blank" rel="noopener" aria-label="Rollbound on Google Play">
+          <img src="assets/games/rollbound-feature.webp" alt="Rollbound artwork" width="1024" height="500" loading="lazy" decoding="async">
+        </a>
+        <div class="game-title reveal">
+          <img src="assets/games/rollbound-icon.webp" alt="" width="64" height="64" loading="lazy">
+          <div><h3>Rollbound</h3><span>Dice roguelite</span></div>
+        </div>
+        <p class="reveal">Roll, hold and score dice hands, then break the rules with 99 charms.</p>
+        <ul class="tags reveal"><li>99 charms</li><li>Daily run</li><li>No ads</li></ul>
+        <div class="stores reveal"><a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.rollbound" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a><a class="store" href="https://apps.apple.com/us/app/rollbound-a-dice-roguelite/id6820359263" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small><b>App Store</b></span></a></div>
+        <div class="news reveal">
+          <img src="assets/games/rollbound-november.webp" alt="Rollbound November update: a mythic card above five dice in the snow" width="1280" height="720" loading="lazy" decoding="async">
+          <div>
+            <span class="pill gold">New · November update</span>
+            <h4>New charms, themes and a mythic rarity</h4>
+            <p>46 new charms, a Mythic card, and Winter and Deep Sea tables.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fan reveal" aria-hidden="false"><img class="shot s1" src="assets/games/rollbound-phone-1.webp" alt="Rollbound screenshot 1" width="480" height="853" loading="lazy" decoding="async"><img class="shot s2" src="assets/games/rollbound-phone-2.webp" alt="Rollbound screenshot 2" width="480" height="853" loading="lazy" decoding="async"><img class="shot s3" src="assets/games/rollbound-phone-3.webp" alt="Rollbound screenshot 3" width="480" height="853" loading="lazy" decoding="async"></div>
+    </article>
+    <article class="game" id="lumio" style="--c1:#3dd6ff;--c2:#ff5fa2">
+      <div class="game-info">
+        <a class="feature reveal spot" href="https://play.google.com/store/apps/details?id=com.wldigital.lumio" target="_blank" rel="noopener" aria-label="Lumio on Google Play">
+          <img src="assets/games/lumio-feature.webp" alt="Lumio artwork" width="1024" height="500" loading="lazy" decoding="async">
+        </a>
+        <div class="game-title reveal">
+          <img src="assets/games/lumio-icon.webp" alt="" width="64" height="64" loading="lazy">
+          <div><h3>Lumio</h3><span>Connect the dots</span></div>
+        </div>
+        <p class="reveal">Join the dots, fill the grid, never cross. Calm, glowing and endlessly satisfying.</p>
+        <ul class="tags reveal"><li>500+ levels</li><li>No timers</li><li>120 Hz</li></ul>
+        <div class="stores reveal"><a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.lumio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a><a class="store" href="https://apps.apple.com/us/app/lumio-connect-the-dots/id6817855439" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small><b>App Store</b></span></a></div>
+      </div>
+      <div class="fan reveal" aria-hidden="false"><img class="shot s1" src="assets/games/lumio-phone-1.webp" alt="Lumio screenshot 1" width="480" height="853" loading="lazy" decoding="async"><img class="shot s2" src="assets/games/lumio-phone-2.webp" alt="Lumio screenshot 2" width="480" height="853" loading="lazy" decoding="async"><img class="shot s3" src="assets/games/lumio-phone-3.webp" alt="Lumio screenshot 3" width="480" height="853" loading="lazy" decoding="async"></div>
+    </article>
     </div>
-    <div class="faces">
-      <div class="face reveal" data-delay="0">
-        <div class="dial"><img src="assets/watchfaces/pixel-style-pro.webp" alt="Pixel Style Digital Pro" loading="lazy"></div>
-        <h3>Pixel Style Digital Pro</h3>
-        <p>Pixel style with health gauges.</p>
-        <a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.watchface.pixelstylepro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-      </div>
-      <div class="face reveal" data-delay="1">
-        <div class="dial"><img src="assets/watchfaces/orbit.webp" alt="Orbit Digital" loading="lazy"></div>
-        <h3>Orbit Digital</h3>
-        <p>Bold time with curved complications.</p>
-        <a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.watchface.orbit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-      </div>
-      <div class="face reveal" data-delay="2">
-        <div class="dial"><img src="assets/watchfaces/material-you.webp" alt="Material You 3 Digital" loading="lazy"></div>
-        <h3>Material You 3 Digital</h3>
-        <p>Material You tiles in 18 colors.</p>
-        <a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.materialyou" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-      </div>
-      <div class="face reveal" data-delay="3">
-        <div class="dial"><img src="assets/watchfaces/glass.webp" alt="Liquid Glass 2" loading="lazy"></div>
-        <h3>Liquid Glass 2</h3>
-        <p>Glass digits and glass tiles.</p>
-        <a class="store" href="https://play.google.com/store/apps/details?id=com.wldigital.glassdigital" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-      </div>
-    </div>
-    <div class="faces-group reveal">
-      <h3>Minimalistic Watch Faces</h3>
-      
-    </div>
-    <div class="faces three">
-      <div class="face reveal" data-delay="0">
-        <div class="dial"><img src="assets/watchfaces/pixel-style.webp" alt="Pixel Style Digital" loading="lazy" width="340" height="340"></div>
-        <h3>Pixel Style Digital</h3>
-        <p>The original Pixel style face.</p>
-        <a class="store" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.pixelstyledigitalwatchface" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-      </div>
-      <div class="face reveal" data-delay="1">
-        <div class="dial"><img src="assets/watchfaces/galaxy-digital.webp" alt="Galaxy Digital" loading="lazy" width="340" height="340"></div>
-        <h3>Galaxy Digital</h3>
-        <p>Galaxy style in 23 color combos.</p>
-        <a class="store" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.galaxystyledigitalwatchface" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-      </div>
-      <div class="face reveal" data-delay="2">
-        <div class="dial"><img src="assets/watchfaces/liquid-glass.webp" alt="Liquid Glass" loading="lazy" width="340" height="340"></div>
-        <h3>Liquid Glass</h3>
-        <p>The original glass tile face.</p>
-        <a class="store" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.liquidglasswatchface" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="about" class="about">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="eyebrow">About</div>
-      <h2 style="margin:4px 0 12px;font-size:32px">WL Digital</h2>
-      <p>An independent studio making small, polished games and watch faces.</p>
-    </div>
-    <div class="reveal" data-delay="1">
-      <div class="eyebrow">Get in touch</div>
-      <p style="margin:8px 0 16px"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=minimalisticwatchfaces@gmail.com" target="_blank" rel="noopener">minimalisticwatchfaces@gmail.com</a></p>
-      <div class="socials" id="socials">
-        <a href="https://play.google.com/store/apps/dev?id=5009055272405102448" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3 13 11.7 3.6 21.1c-.3-.2-.5-.6-.5-1V3.3c0-.4.2-.8.5-1z"/><path fill="#fbbc04" d="m16.3 15 3.9-2.2c.8-.5.8-1.2 0-1.7L16.3 9l-3.3 2.7z"/><path fill="#ea4335" d="M13 11.7 3.6 21.1c.4.3.9.3 1.5 0L16.3 15z"/><path fill="#4285f4" d="M13 11.7 16.3 9 5.1 2.9c-.6-.3-1.1-.3-1.5 0z"/></svg>Google Play</a>
-        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=minimalisticwatchfaces@gmail.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7zm0 2.9V17h16V9.9l-8 5z"/></svg>Email</a>
-        <a href="https://github.com/ParkerLoney" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
-        <a href="privacy.html">Privacy policy</a>
+  <section id="watchfaces" class="faces-sec">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="kicker">Wear OS</span>
+        <h2>Watch faces</h2>
       </div>
-      <!-- Social accounts: fill in the handles below and the links appear automatically. -->
-      <script>
-        var SOCIALS = { instagram: "", youtube: "", tiktok: "", x: "", facebook: "", linkedin: "" };
-      </script>
+      <div class="tabs reveal" role="tablist" aria-label="Watch face collections">
+        <span class="ind" aria-hidden="true"></span>
+        <button role="tab" id="t-wl" aria-controls="p-wl" aria-selected="true">WL Digital <em>4</em></button>
+        <button role="tab" id="t-mini" aria-controls="p-mini" aria-selected="false" tabindex="-1">Minimalistic <em>3</em></button>
+      </div>
+      <div class="panel" id="p-wl" role="tabpanel" aria-labelledby="t-wl">
+        <h3 class="panel-title">WL Digital</h3>
+        <div class="faces">
+        <div class="face reveal spot" style="--i:0">
+          <div class="dial"><img src="assets/watchfaces/pixel-style-pro.webp" alt="Pixel Style Digital Pro watch face" width="340" height="340" loading="lazy" decoding="async"></div>
+          <h3>Pixel Style Digital Pro</h3>
+          <p>Pixel style with health gauges</p>
+          <a class="store sm" href="https://play.google.com/store/apps/details?id=com.wldigital.watchface.pixelstylepro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        </div>
+        <div class="face reveal spot" style="--i:1">
+          <div class="dial"><img src="assets/watchfaces/orbit.webp" alt="Orbit Digital watch face" width="340" height="340" loading="lazy" decoding="async"></div>
+          <h3>Orbit Digital</h3>
+          <p>Bold time, curved complications</p>
+          <a class="store sm" href="https://play.google.com/store/apps/details?id=com.wldigital.watchface.orbit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        </div>
+        <div class="face reveal spot" style="--i:2">
+          <div class="dial"><img src="assets/watchfaces/material-you.webp" alt="Material You 3 Digital watch face" width="340" height="340" loading="lazy" decoding="async"></div>
+          <h3>Material You 3 Digital</h3>
+          <p>Material You tiles, 18 colors</p>
+          <a class="store sm" href="https://play.google.com/store/apps/details?id=com.wldigital.materialyou" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        </div>
+        <div class="face reveal spot" style="--i:3">
+          <div class="dial"><img src="assets/watchfaces/glass.webp" alt="Liquid Glass 2 watch face" width="340" height="340" loading="lazy" decoding="async"></div>
+          <h3>Liquid Glass 2</h3>
+          <p>Glass digits and glass tiles</p>
+          <a class="store sm" href="https://play.google.com/store/apps/details?id=com.wldigital.glassdigital" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        </div>
+        </div>
+      </div>
+      <div class="panel" id="p-mini" role="tabpanel" aria-labelledby="t-mini">
+        <h3 class="panel-title">Minimalistic Watch Faces</h3>
+        <div class="faces">
+        <div class="face reveal spot" style="--i:0">
+          <div class="dial"><img src="assets/watchfaces/pixel-style.webp" alt="Pixel Style Digital watch face" width="340" height="340" loading="lazy" decoding="async"></div>
+          <h3>Pixel Style Digital</h3>
+          <p>The original Pixel style face</p>
+          <a class="store sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.pixelstyledigitalwatchface" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        </div>
+        <div class="face reveal spot" style="--i:1">
+          <div class="dial"><img src="assets/watchfaces/galaxy-digital.webp" alt="Galaxy Digital watch face" width="340" height="340" loading="lazy" decoding="async"></div>
+          <h3>Galaxy Digital</h3>
+          <p>Galaxy style in 23 color combos</p>
+          <a class="store sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.galaxystyledigitalwatchface" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        </div>
+        <div class="face reveal spot" style="--i:2">
+          <div class="dial"><img src="assets/watchfaces/liquid-glass.webp" alt="Liquid Glass watch face" width="340" height="340" loading="lazy" decoding="async"></div>
+          <h3>Liquid Glass</h3>
+          <p>The original glass tile face</p>
+          <a class="store sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.liquidglasswatchface" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="contact-card reveal spot">
+        <div>
+          <span class="kicker">Say hi</span>
+          <h2>Questions, ideas or feedback?</h2>
+          <p>We read every email.</p>
+        </div>
+        <div class="links">
+          <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=minimalisticwatchfaces@gmail.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>Email us</a>
+          <a class="chip" href="https://play.google.com/store/apps/dev?id=5009055272405102448" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg>Google Play</a>
+          <a class="chip" href="https://github.com/ParkerLoney" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
   <div class="wrap">
-    <span>© <span id="y">2026</span> WL Digital. All rights reserved.</span>
-    <span><a href="privacy.html">Privacy policy</a></span>
+    <a class="brand sm" href="#top"><img src="assets/wl-mark.png" alt="WL" width="28" height="28"><span>Digital</span></a>
+    <span>© <span id="y">2026</span> WL Digital · <a href="privacy.html">Privacy</a></span>
   </div>
 </footer>
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  // Social links from the SOCIALS handles above
-  (function () {
-    var base = { instagram: ["https://instagram.com/", "Instagram"], youtube: ["https://youtube.com/@", "YouTube"], tiktok: ["https://tiktok.com/@", "TikTok"], x: ["https://x.com/", "X"], facebook: ["https://facebook.com/", "Facebook"], linkedin: ["https://linkedin.com/company/", "LinkedIn"] };
-    var box = document.getElementById('socials');
-    Object.keys(base).forEach(function (k) {
-      var h = (window.SOCIALS || {})[k]; if (!h) return;
-      var a = document.createElement('a'); a.href = base[k][0] + h.replace(/^@/, ''); a.target = '_blank'; a.rel = 'noopener'; a.textContent = base[k][1];
-      box.insertBefore(a, box.lastElementChild);
-    });
-  })();
-  // Scroll reveal
-  var lite = matchMedia('(max-width: 820px), (hover: none)').matches;
-  if (lite) document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  // Header shadow and parallax orbs
-  var hd = document.querySelector('.site-header');
-  var orbs = lite ? [] : document.querySelectorAll('.orb'), ticking = false;
-  addEventListener('scroll', function () { if (ticking) return; ticking = true;
-    requestAnimationFrame(function () { ticking = false; hd.classList.toggle('scrolled', scrollY > 10);
-      orbs.forEach(function (o, i) { o.style.translate = '0 ' + (scrollY * (i ? 0.08 : 0.15)) + 'px'; }); }); }, { passive: true });
-  // Tilt on game cards (pointer devices only)
-  if (matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
-    document.querySelectorAll('.face').forEach(function (c) {
-      c.addEventListener('pointermove', function (e) { var r = c.getBoundingClientRect(); var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-        c.style.transform = 'translateY(-4px) perspective(700px) rotateX(' + (-y * 8) + 'deg) rotateY(' + (x * 8) + 'deg)'; });
-      c.addEventListener('pointerleave', function () { c.style.transform = ''; });
-    });
-  }
-</script>
+
+<script src="site.js" defer></script>
 </body>
 </html>

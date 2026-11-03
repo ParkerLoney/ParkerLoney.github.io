@@ -8,4 +8,5 @@ https://parkerloney.github.io/
   (`company/legal/privacy-policy.md`). After editing the policy, run
   `python3 build_privacy.py path/to/privacy-policy.md` and commit the result.
 - `assets/`: web-sized copies of the store art from the WL_Digital repo.
-- Social links: fill in the `SOCIALS` handles near the bottom of `index.html` and they appear automatically.
+- `style.css` and `site.js`: the shared look and the small interactions (scroll reveal, tabs, header). Motion uses only transform and opacity, and hover effects only run with a mouse.
+- `app-ads.txt`: the ad sellers file AdMob and LevelPlay read.
