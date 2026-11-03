@@ -62,6 +62,53 @@
     select(0, false, true);
   }
 
+  // Watch face details: the card grows out of the tapped face
+  var sheet = document.getElementById('face-sheet');
+  if (sheet && sheet.showModal) {
+    var card = sheet.querySelector('.sheet-card'), body = sheet.querySelector('.sheet-body'), simg = sheet.querySelector('.sheet-dial img'),
+        buy = sheet.querySelector('.sheet-buy .store'), price = sheet.querySelector('.sheet-price b'), from = null, busy = false;
+    function rectAnim(el, a, b, back) {
+      var sx = a.width / b.width, sy = a.height / b.height, dx = a.left + a.width / 2 - (b.left + b.width / 2), dy = a.top + a.height / 2 - (b.top + b.height / 2);
+      var start = { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + sx + ',' + sy + ')', opacity: 0, borderRadius: '24px' }, end = { transform: 'none', opacity: 1 };
+      return el.animate(back ? [end, start] : [start, end], { duration: back ? 320 : 520, easing: back ? 'cubic-bezier(.4,0,.6,1)' : 'cubic-bezier(.2,.8,.2,1)', fill: 'both' });
+    }
+    document.querySelectorAll('[data-face]').forEach(function (f) {
+      f.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || busy) return;
+        e.preventDefault();
+        from = f;
+        body.innerHTML = f.querySelector('template').innerHTML;
+        body.querySelector('h3').id = 'sheet-title';
+        var img = f.querySelector('.dial img'); simg.src = img.currentSrc || img.src; simg.alt = img.alt;
+        buy.href = f.href; price.textContent = f.querySelector('.price').textContent;
+        buy.setAttribute('aria-label', 'Get ' + body.querySelector('h3').textContent + ' on Google Play for ' + price.textContent);
+        doc.classList.add('modal-open');
+        sheet.classList.add('opening'); sheet.showModal(); card.scrollTop = 0;
+        requestAnimationFrame(function () { sheet.classList.remove('opening'); });
+        if (!reduce) {
+          var a = rectAnim(card, f.getBoundingClientRect(), card.getBoundingClientRect(), false);
+          sheet.querySelectorAll('.sheet-body > *, .sheet-buy').forEach(function (el, k) {
+            el.animate([{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { duration: 450, delay: 180 + k * 45, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'both' });
+          });
+          simg.animate([{ transform: 'rotate(-90deg) scale(.7)' }, { transform: 'none' }], { duration: 700, easing: 'cubic-bezier(.2,.8,.2,1)' });
+          a.onfinish = function () { a.cancel(); };
+        }
+      });
+    });
+    function close() {
+      if (busy || !sheet.open) return;
+      function done() { busy = false; sheet.close(); sheet.classList.remove('closing'); doc.classList.remove('modal-open'); if (from) from.focus({ preventScroll: true }); }
+      sheet.classList.add('closing');
+      if (reduce || !from) return done();
+      busy = true;
+      var a = rectAnim(card, from.getBoundingClientRect(), card.getBoundingClientRect(), true);
+      a.onfinish = function () { done(); a.cancel(); };
+    }
+    sheet.querySelector('.sheet-x').addEventListener('click', close);
+    sheet.addEventListener('click', function (e) { if (e.target === sheet) close(); });
+    sheet.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
+  }
+
   if (!fine || reduce) return;
 
   // Spotlight that follows the pointer on cards
