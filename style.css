@@ -35,7 +35,6 @@ svg { width: 1em; height: 1em; flex: none; }
 /* Header */
 .site-header { position: fixed; inset: 0 0 auto 0; z-index: 20; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
 .site-header.scrolled { background: rgba(9, 8, 26, 0.95); border-color: var(--line); }
-@supports (backdrop-filter: blur(1px)) { @media (min-width: 821px) { .site-header.scrolled { background: rgba(9, 8, 26, 0.6); backdrop-filter: blur(16px) saturate(1.4); } } }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 20px; letter-spacing: 0.01em; }
 .brand img { width: 38px; height: 38px; border-radius: 50%; box-shadow: 0 0 22px rgba(109, 125, 255, .5); }
@@ -54,7 +53,8 @@ svg { width: 1em; height: 1em; flex: none; }
 .btn svg { width: 18px; height: 18px; }
 .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 10px; border-radius: 999px; font-size: 13px; font-weight: 500;
   color: var(--muted); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
-.pill b { width: 8px; height: 8px; border-radius: 50%; background: #4be08a; box-shadow: 0 0 0 4px rgba(75, 224, 138, .18); }
+.pill b { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #4be08a; }
+.pill b::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; background: rgba(75, 224, 138, .35); }
 .pill.gold { color: var(--gold); background: rgba(255, 201, 60, .08); box-shadow: inset 0 0 0 1px rgba(255, 201, 60, .25); padding: 4px 12px; font-size: 12px; font-weight: 600; }
 .kicker { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
   background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -160,9 +160,12 @@ section { position: relative; }
 .js .panel + .panel { margin-top: 0; }
 .faces { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .face { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 28px 18px 22px;
-  border-radius: 24px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); transition: transform .35s var(--ease), box-shadow .35s; }
-.dial { position: relative; width: 168px; aspect-ratio: 1; border-radius: 50%; padding: 6px; margin-bottom: 8px;
-  background: conic-gradient(from var(--a, 0deg), #2b2770, var(--accent), var(--accent-2), #2b2770 60%, #2b2770); }
+  border-radius: 24px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); transition: transform .3s var(--ease); }
+.face::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s ease;
+  box-shadow: inset 0 0 0 1px rgba(180,107,255,.45), 0 24px 50px -20px rgba(0,0,0,.8), 0 0 40px -10px rgba(124,107,255,.35); }
+.dial { position: relative; width: 168px; aspect-ratio: 1; border-radius: 50%; padding: 6px; margin-bottom: 8px; isolation: isolate; }
+.dial::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 50%;
+  background: conic-gradient(#2b2770, var(--accent), var(--accent-2), #2b2770 60%, #2b2770); }
 .dial img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 5px solid #000; transition: transform .6s var(--ease); }
 .face h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
 .face p { color: var(--muted); font-size: 14px; line-height: 1.45; flex: 1; }
@@ -227,8 +230,6 @@ html.modal-open { overflow: hidden; }
 .chip svg { width: 18px; height: 18px; }
 
 /* Card spotlight that follows the pointer (desktop) */
-.spot::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.1), transparent 45%); }
 
 /* Footer */
 footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
@@ -258,7 +259,6 @@ footer a:hover { color: var(--text); }
   .hero .lead { animation-delay: .35s; } .hero .cta { animation-delay: .5s; }
   .hero h1 .ln > span { animation: lineup 1s var(--ease) both; }
   .hero h1 .ln:nth-child(2) > span { animation-delay: .12s; }
-  .grad { animation: shimmer 6s linear infinite; }
   .hero-art { animation: rise 1.1s var(--ease) .2s both; }
   .p1 { animation: fanL 1.2s var(--ease) .35s both; }
   .p3 { animation: fanR 1.2s var(--ease) .35s both; }
@@ -268,8 +268,7 @@ footer a:hover { color: var(--text); }
   .aurora i:nth-child(2) { animation-duration: 28s; animation-delay: -8s; }
   .aurora i:nth-child(3) { animation-duration: 32s; animation-delay: -14s; }
   .track { animation: marquee 40s linear infinite; }
-  .pill b { animation: pulse 2.4s ease-out infinite; }
-  .dial { animation: spin 8s linear infinite paused; }
+  .pill b::after { animation: pulse 2.4s ease-out infinite; }
   .panel.out { animation: panelOut .22s ease-in forwards; pointer-events: none; }
   .panel.enter .face { animation: faceIn .7s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms); }
   .panel.enter .dial img { animation: dialIn .9s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms + 80ms); }
@@ -278,8 +277,7 @@ footer a:hover { color: var(--text); }
 @keyframes panelOut { to { opacity: 0; transform: translateX(calc(var(--dir, 1) * -40px)) scale(.97); } }
 @keyframes faceIn { from { opacity: 0; transform: translateX(calc(var(--dir, 1) * 60px)) scale(.92); } }
 @keyframes dialIn { from { opacity: 0; transform: rotate(calc(var(--dir, 1) * -140deg)) scale(.6); } }
-@property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
-@keyframes spin { to { --a: 360deg; } }
+@keyframes spin { to { transform: rotate(360deg); } }
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
 @keyframes lineup { from { transform: translateY(105%); } }
 @keyframes shimmer { to { background-position: -200% 0; } }
@@ -290,7 +288,7 @@ footer a:hover { color: var(--text); }
 @keyframes bobw { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 @keyframes drift { to { transform: translate(120px, 80px) scale(1.15); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(75,224,138,.5); } 100% { box-shadow: 0 0 0 10px rgba(75,224,138,0); } }
+@keyframes pulse { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
 
 /* Hover effects only with a real pointer, so taps on phones never leave cards stuck */
 @media (hover: hover) and (pointer: fine) {
@@ -299,9 +297,10 @@ footer a:hover { color: var(--text); }
   .store:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px rgba(255,255,255,.4); }
   .chip:hover { background: rgba(0,0,0,.4); transform: translateY(-2px); }
   .feature:hover img { transform: scale(1.05); }
-  .spot:hover::after { opacity: 1; }
-  .face:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px rgba(180,107,255,.4), 0 24px 50px -20px rgba(0,0,0,.8); }
-  .face:hover .dial { animation-play-state: running; }
+  .face:hover { transform: translateY(-6px); }
+  .face:hover::before { opacity: 1; }
+  .dial::before { transition: transform 1.2s var(--ease); }
+  .face:hover .dial::before { transform: rotate(180deg); }
   .face:hover .dial img { transform: scale(1.04) rotate(-4deg); }
   .face:hover .more svg { transform: rotate(90deg); }
   .sheet-x:hover { background: rgba(255,255,255,.16); transform: rotate(90deg); }
@@ -388,4 +387,9 @@ footer a:hover { color: var(--text); }
 @media (hover: none) {
   .face, .btn, .store, .chip, .tabs button, .feature { transition: transform .15s ease; }
   .face:active, .btn:active, .store:active, .chip:active, .feature:active { transform: scale(.97); }
+}
+
+/* Continuously animated pieces get their own layers, so the browser only moves them */
+@media (prefers-reduced-motion: no-preference) {
+  .aurora i, .track, .p2, .watch, .stack { will-change: transform; }
 }

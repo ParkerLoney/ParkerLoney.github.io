@@ -14,6 +14,11 @@
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
     items.forEach(function (el) { io.observe(el); });
+    // Once an element has faded in, drop the reveal styles so its own hover transitions stay quick.
+    document.addEventListener('transitionend', function (e) {
+      var el = e.target;
+      if (e.propertyName === 'opacity' && el.classList && el.classList.contains('reveal') && el.classList.contains('in')) el.classList.remove('reveal', 'in');
+    });
     // Safety net: anything still hidden after load and a few seconds (e.g. odd browsers) just shows.
     setTimeout(function () { document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
       var r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add('in'); }); }, 2500);
@@ -37,7 +42,7 @@
     var panels = [].map.call(btns, function (b) { return document.getElementById(b.getAttribute('aria-controls')); });
     function show(p, dir) {
       panels.forEach(function (q) { if (q !== p) { q.hidden = true; q.classList.remove('out', 'enter'); } });
-      p.querySelectorAll('.face').forEach(function (f) { f.classList.add('in'); });
+      p.querySelectorAll('.face').forEach(function (f) { f.classList.remove('reveal', 'in'); });
       p.style.setProperty('--dir', dir); p.hidden = false;
       p.classList.remove('enter'); void p.offsetWidth; p.classList.add('enter');
     }
@@ -49,7 +54,7 @@
       if (i === cur) return;
       var dir = i > cur ? 1 : -1, old = panels[cur], next = panels[i];
       cur = i; clearTimeout(timer);
-      if (reduce) { panels.forEach(function (p) { p.hidden = p !== next; }); next.querySelectorAll('.face').forEach(function (f) { f.classList.add('in'); }); return; }
+      if (reduce) { panels.forEach(function (p) { p.hidden = p !== next; }); next.querySelectorAll('.face').forEach(function (f) { f.classList.remove('reveal', 'in'); }); return; }
       if (!old.hidden) { old.style.setProperty('--dir', dir); old.classList.remove('enter'); old.classList.add('out'); }
       timer = setTimeout(function () { show(next, dir); }, 220);
     }
@@ -110,14 +115,6 @@
   }
 
   if (!fine || reduce) return;
-
-  // Spotlight that follows the pointer on cards
-  document.querySelectorAll('.spot').forEach(function (c) {
-    c.addEventListener('pointermove', function (e) {
-      var r = c.getBoundingClientRect();
-      c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-    });
-  });
 
   // Gentle tilt of the hero phones toward the pointer
   var stack = document.querySelector('.stack'), hero = document.querySelector('.hero');
