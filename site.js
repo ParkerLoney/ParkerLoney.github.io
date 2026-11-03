@@ -25,12 +25,12 @@
   }
 
   // Header state and scroll progress, at most once per frame
-  var hd = document.querySelector('.site-header'), bar = document.querySelector('.progress'), ticking = false;
+  var hd = document.querySelector('.site-header'), bar = document.querySelector('.progress'), ticking = false, scrolled = null;
   function onScroll() {
     ticking = false;
     var max = doc.scrollHeight - innerHeight;
     if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
-    if (hd) hd.classList.toggle('scrolled', scrollY > 8);
+    var s = scrollY > 8; if (hd && s !== scrolled) { scrolled = s; hd.classList.toggle('scrolled', s); }
   }
   addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
@@ -114,15 +114,28 @@
     sheet.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
   }
 
+  // Pause the looping hero and ticker animations while they're off screen
+  if ('IntersectionObserver' in window) {
+    var po = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); }); });
+    document.querySelectorAll('.hero, .ticker').forEach(function (el) { po.observe(el); });
+  }
+
   if (!fine || reduce) return;
 
-  // Gentle tilt of the hero phones toward the pointer
+  // Gentle tilt of the hero phones toward the pointer, eased every frame (no restarted CSS transitions)
   var stack = document.querySelector('.stack'), hero = document.querySelector('.hero');
   if (stack && hero) {
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+    function step() {
+      cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
+      stack.style.transform = 'perspective(1200px) rotateY(' + cx.toFixed(3) + 'deg) rotateX(' + cy.toFixed(3) + 'deg)';
+      raf = (Math.abs(tx - cx) > 0.01 || Math.abs(ty - cy) > 0.01) ? requestAnimationFrame(step) : 0;
+    }
+    function kick() { if (!raf) raf = requestAnimationFrame(step); }
     hero.addEventListener('pointermove', function (e) {
-      var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, yy = (e.clientY - r.top) / r.height - .5;
-      stack.style.transform = 'perspective(1200px) rotateY(' + (x * 10) + 'deg) rotateX(' + (-yy * 8) + 'deg)';
+      var r = hero.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width - .5) * 10; ty = -((e.clientY - r.top) / r.height - .5) * 8; kick();
     });
-    hero.addEventListener('pointerleave', function () { stack.style.transform = ''; });
+    hero.addEventListener('pointerleave', function () { tx = 0; ty = 0; kick(); });
   }
 })();

@@ -68,14 +68,12 @@ svg { width: 1em; height: 1em; flex: none; }
 
 /* Hero */
 .hero { position: relative; overflow: clip; padding: 140px 0 90px; min-height: min(100svh, 900px); display: flex; align-items: center; }
-.aurora { position: absolute; inset: 0; pointer-events: none; }
-.aurora i { position: absolute; width: 900px; height: 900px; border-radius: 50%; opacity: .55; }
-.aurora i:nth-child(1) { left: -300px; top: -380px; background: radial-gradient(closest-side, rgba(109, 77, 255, .75), transparent); }
-.aurora i:nth-child(2) { right: -320px; top: -120px; background: radial-gradient(closest-side, rgba(40, 110, 255, .55), transparent); }
-.aurora i:nth-child(3) { left: 30%; bottom: -620px; background: radial-gradient(closest-side, rgba(220, 90, 255, .35), transparent); }
-.grid-bg { position: absolute; inset: 0; pointer-events: none; opacity: .5;
-  background-image: radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px); background-size: 28px 28px;
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%); }
+.aurora { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+/* One small layer, scaled up by the GPU: soft glows don't need full resolution, and it's far less to draw each frame. */
+.aurora i { position: absolute; left: 50%; top: 50%; width: 400px; height: 260px; margin: -130px 0 0 -200px; transform: scale(4.2);
+  background: radial-gradient(38% 50% at 18% 12%, rgba(109, 77, 255, .5), transparent 70%),
+              radial-gradient(34% 46% at 88% 28%, rgba(40, 110, 255, .38), transparent 70%),
+              radial-gradient(40% 40% at 55% 105%, rgba(220, 90, 255, .24), transparent 70%); }
 .hero-wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; width: 100%; }
 .hero h1 { font-size: clamp(40px, 5.4vw, 72px); font-weight: 800; margin: 22px 0 20px; letter-spacing: -0.035em; line-height: 1.02; }
 .hero h1 .ln { display: block; overflow: hidden; padding-bottom: .24em; margin-bottom: -.2em; }
@@ -84,7 +82,7 @@ svg { width: 1em; height: 1em; flex: none; }
 .lead { font-size: clamp(17px, 1.6vw, 19px); color: var(--muted); max-width: 500px; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .hero-art { position: relative; height: 560px; }
-.stack { position: absolute; inset: 0; transition: transform .6s var(--ease); }
+.stack { position: absolute; inset: 0; }
 .p { position: absolute; top: 50%; left: 50%; width: 230px; height: auto; border-radius: 30px; border: 6px solid #000;
   box-shadow: 0 40px 80px -20px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); }
 .p1 { transform: translate(-50%, -50%) translateX(-150px) rotate(-12deg) scale(.86); }
@@ -262,9 +260,8 @@ footer a:hover { color: var(--text); }
   .p3 { animation: fanR 1.2s var(--ease) .35s both; }
   .p2 { animation: bob 7s ease-in-out 1.6s infinite; }
   .watch { animation: pop .9s var(--ease) .9s both, bobw 6s ease-in-out 2s infinite; }
-  .aurora i { animation: drift 22s ease-in-out infinite alternate; }
-  .aurora i:nth-child(2) { animation-duration: 28s; animation-delay: -8s; }
-  .aurora i:nth-child(3) { animation-duration: 32s; animation-delay: -14s; }
+  .aurora i { animation: drift 24s ease-in-out infinite alternate; }
+  .paused .aurora i, .paused .p2, .paused .watch, .ticker.paused .track { animation-play-state: paused; }
   .track { animation: marquee 40s linear infinite; }
     .panel.out { animation: panelOut .22s ease-in forwards; pointer-events: none; }
   .panel.enter .face { animation: faceIn .7s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms); }
@@ -283,7 +280,7 @@ footer a:hover { color: var(--text); }
 @keyframes bob { 0%, 100% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, calc(-50% - 12px)); } }
 @keyframes pop { from { transform: scale(.4) rotate(-30deg); opacity: 0; } }
 @keyframes bobw { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
-@keyframes drift { to { transform: translate(120px, 80px) scale(1.15); } }
+@keyframes drift { to { transform: translate(60px, 30px) scale(4.8) rotate(4deg); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* Hover effects only with a real pointer, so taps on phones never leave cards stuck */
@@ -320,7 +317,7 @@ footer a:hover { color: var(--text); }
   .p1 { transform: translate(-50%, -50%) translateX(-110px) rotate(-12deg) scale(.86); }
   .p3 { transform: translate(-50%, -50%) translateX(110px) rotate(12deg) scale(.86); }
   .watch { width: 120px; height: 120px; right: 8%; bottom: 4%; border-width: 6px; }
-  .aurora i { width: 600px; height: 600px; }
+  .aurora i { transform: scale(2.8); }
 }
 
 /* Phones */
