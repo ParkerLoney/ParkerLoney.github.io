@@ -14,7 +14,7 @@
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; scroll-padding-top: 72px; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; scroll-padding-top: 72px; }
 body {
   margin: 0; background: var(--bg); color: var(--text);
   font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -147,7 +147,9 @@ section { position: relative; }
 .tabs button { position: relative; z-index: 1; border: 0; background: none; color: var(--muted); font: 600 15px/1 "Poppins", sans-serif;
   padding: 12px 22px; border-radius: 999px; cursor: pointer; transition: color .3s; white-space: nowrap; }
 .tabs button[aria-selected="true"] { color: #fff; }
-.tabs em { font-style: normal; font-size: 12px; margin-left: 6px; padding: 2px 7px; border-radius: 999px; background: rgba(255,255,255,.1); }
+.tabs button { display: inline-flex; align-items: baseline; justify-content: center; gap: 8px; }
+.formerly { font-family: "Caveat", "Segoe Script", "Bradley Hand", cursive; font-weight: 600; font-size: 1.25em; line-height: 1; letter-spacing: 0; color: #c9b6ff; transform: rotate(-4deg); display: inline-block; }
+.tabs button[aria-selected="true"] .formerly { color: #fff; opacity: .85; }
 .tabs .ind { position: absolute; top: 5px; bottom: 5px; left: 5px; width: calc(50% - 5px); border-radius: 999px;
   background: linear-gradient(100deg, var(--accent), var(--accent-2)); box-shadow: 0 8px 24px -6px rgba(124,107,255,.6); transition: transform .45s var(--ease); }
 .tabs[data-tab="1"] .ind { transform: translateX(100%); }
@@ -303,7 +305,8 @@ footer a:hover { color: var(--text); }
   .news h4 { font-size: 15px; }
   .news p { font-size: 13px; }
   .tabs { display: grid; width: 100%; margin-bottom: 24px; }
-  .tabs button { padding: 12px 8px; font-size: 14px; }
+  .tabs button { padding: 10px 8px; font-size: 14px; flex-direction: column; align-items: center; gap: 0; line-height: 1.2; white-space: normal; }
+  .tabs .formerly { font-size: 17px; margin-bottom: 2px; }
   .faces { gap: 12px; }
   .face { padding: 18px 10px 16px; gap: 6px; border-radius: 20px; }
   .dial { width: 118px; padding: 4px; }
@@ -320,3 +323,5 @@ footer a:hover { color: var(--text); }
   .links .btn { width: 100%; }
   .links .chip { flex: 1; justify-content: center; }
 }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -136,8 +136,8 @@
       </div>
       <div class="tabs reveal" role="tablist" aria-label="Watch face collections">
         <span class="ind" aria-hidden="true"></span>
-        <button role="tab" id="t-wl" aria-controls="p-wl" aria-selected="true">WL Digital <em>4</em></button>
-        <button role="tab" id="t-mini" aria-controls="p-mini" aria-selected="false" tabindex="-1">Minimalistic <em>3</em></button>
+        <button role="tab" id="t-wl" aria-controls="p-wl" aria-selected="true"><span class="tab-name">WL Digital</span></button>
+        <button role="tab" id="t-mini" aria-controls="p-mini" aria-selected="false" tabindex="-1"><span class="formerly">formerly</span><span class="tab-name">Minimalistic Watch Faces</span></button>
       </div>
       <div class="panel" id="p-wl" role="tabpanel" aria-labelledby="t-wl">
         <h3 class="panel-title">WL Digital</h3>
@@ -169,7 +169,7 @@
         </div>
       </div>
       <div class="panel" id="p-mini" role="tabpanel" aria-labelledby="t-mini">
-        <h3 class="panel-title">Minimalistic Watch Faces</h3>
+        <h3 class="panel-title"><span class="formerly">formerly</span> Minimalistic Watch Faces</h3>
         <div class="faces">
         <div class="face reveal spot" style="--i:0">
           <div class="dial"><img src="assets/watchfaces/pixel-style.webp" alt="Pixel Style Digital watch face" width="340" height="340" loading="lazy" decoding="async"></div>
