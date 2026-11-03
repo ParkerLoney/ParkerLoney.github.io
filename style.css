@@ -80,9 +80,9 @@ svg { width: 1em; height: 1em; flex: none; }
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%); }
 .hero-wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; width: 100%; }
 .hero h1 { font-size: clamp(40px, 5.4vw, 72px); font-weight: 800; margin: 22px 0 20px; letter-spacing: -0.035em; line-height: 1.02; }
-.hero h1 .ln { display: block; overflow: hidden; padding-bottom: .2em; margin-bottom: -.16em; }
+.hero h1 .ln { display: block; overflow: hidden; padding-bottom: .24em; margin-bottom: -.2em; }
 .hero h1 .ln > span { display: inline-block; }
-.grad { background: linear-gradient(95deg, #8ea0ff 0%, #b46bff 45%, #ff7ab8 90%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad { padding-bottom: .14em; margin-bottom: -.14em; background: linear-gradient(95deg, #8ea0ff 0%, #b46bff 45%, #ff7ab8 90%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
 .lead { font-size: clamp(17px, 1.6vw, 19px); color: var(--muted); max-width: 500px; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .hero-art { position: relative; height: 560px; }
@@ -224,7 +224,14 @@ footer a:hover { color: var(--text); }
   .track { animation: marquee 40s linear infinite; }
   .pill b { animation: pulse 2.4s ease-out infinite; }
   .dial { animation: spin 8s linear infinite paused; }
+  .panel.out { animation: panelOut .22s ease-in forwards; pointer-events: none; }
+  .panel.enter .face { animation: faceIn .7s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms); }
+  .panel.enter .dial img { animation: dialIn .9s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms + 80ms); }
+  .panel.enter .face .store { animation: rise .6s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms + 200ms); }
 }
+@keyframes panelOut { to { opacity: 0; transform: translateX(calc(var(--dir, 1) * -40px)) scale(.97); } }
+@keyframes faceIn { from { opacity: 0; transform: translateX(calc(var(--dir, 1) * 60px)) scale(.92); } }
+@keyframes dialIn { from { opacity: 0; transform: rotate(calc(var(--dir, 1) * -140deg)) scale(.6); } }
 @property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @keyframes spin { to { --a: 360deg; } }
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } }

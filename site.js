@@ -33,17 +33,25 @@
   // Watch face tabs
   var tabs = document.querySelector('.tabs');
   if (tabs) {
-    var btns = tabs.querySelectorAll('[role="tab"]');
-    function select(i, focus) {
+    var btns = tabs.querySelectorAll('[role="tab"]'), cur = 0, timer = 0;
+    var panels = [].map.call(btns, function (b) { return document.getElementById(b.getAttribute('aria-controls')); });
+    function show(p, dir) {
+      panels.forEach(function (q) { if (q !== p) { q.hidden = true; q.classList.remove('out', 'enter'); } });
+      p.querySelectorAll('.face').forEach(function (f) { f.classList.add('in'); });
+      p.style.setProperty('--dir', dir); p.hidden = false;
+      p.classList.remove('enter'); void p.offsetWidth; p.classList.add('enter');
+    }
+    function select(i, focus, first) {
       tabs.dataset.tab = i;
-      btns.forEach(function (b, k) {
-        var on = k === i, panel = document.getElementById(b.getAttribute('aria-controls'));
-        b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
-        panel.hidden = !on;
-        if (on && !reduce) panel.querySelectorAll('.face').forEach(function (f) {
-          f.classList.remove('in'); void f.offsetWidth; f.classList.add('in'); });
-      });
+      btns.forEach(function (b, k) { b.setAttribute('aria-selected', k === i); b.tabIndex = k === i ? 0 : -1; });
       if (focus) btns[i].focus();
+      if (first) { panels.forEach(function (p, k) { p.hidden = k !== i; }); cur = i; return; }
+      if (i === cur) return;
+      var dir = i > cur ? 1 : -1, old = panels[cur], next = panels[i];
+      cur = i; clearTimeout(timer);
+      if (reduce) { panels.forEach(function (p) { p.hidden = p !== next; }); next.querySelectorAll('.face').forEach(function (f) { f.classList.add('in'); }); return; }
+      if (!old.hidden) { old.style.setProperty('--dir', dir); old.classList.remove('enter'); old.classList.add('out'); }
+      timer = setTimeout(function () { show(next, dir); }, 220);
     }
     btns.forEach(function (b, i) {
       b.addEventListener('click', function () { select(i); });
@@ -51,7 +59,7 @@
         if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); select((i + (e.key === 'ArrowRight' ? 1 : btns.length - 1)) % btns.length, true); }
       });
     });
-    select(0);
+    select(0, false, true);
   }
 
   if (!fine || reduce) return;
