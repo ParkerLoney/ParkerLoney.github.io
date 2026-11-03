@@ -45,11 +45,6 @@
         <a class="btn" href="#games">See the games</a>
         <a class="btn ghost" href="#watchfaces">Watch faces</a>
       </div>
-      <div class="stats">
-        <div class="stat"><span class="count" data-count="3">0</span><span>mobile games</span></div>
-        <div class="stat"><span class="count" data-count="7">0</span><span>watch faces</span></div>
-        <div class="stat"><span class="count" data-count="10">0</span><span>realms to conquer</span></div>
-      </div>
     </div>
     <div class="hero-art">
       <img class="phone" src="assets/games/merge-realms-phone-1.webp" alt="Merge Realms gameplay" width="480" height="853">
@@ -267,11 +262,6 @@
   // Scroll reveal
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  // Counters
-  var co = new IntersectionObserver(function (es) { es.forEach(function (e) { if (!e.isIntersecting) return; co.unobserve(e.target);
-    var el = e.target, end = +el.dataset.count, t0 = performance.now();
-    (function tick(now) { var p = Math.min(1, (now - t0) / 1200); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); })(t0); }); }, { threshold: 0.5 });
-  document.querySelectorAll('.count').forEach(function (el) { co.observe(el); });
   // Header shadow and parallax orbs
   var hd = document.querySelector('.site-header');
   addEventListener('scroll', function () { hd.classList.toggle('scrolled', scrollY > 10);

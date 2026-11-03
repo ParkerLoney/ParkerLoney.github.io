@@ -211,11 +211,6 @@ footer a { color: var(--muted); }
 .face .store { margin-top: 4px; }
 .socials a svg { width: 16px; height: 16px; vertical-align: -3px; margin-right: 6px; }
 .socials a { display: inline-flex; align-items: center; }
-.count { font-weight: 800; font-size: 40px; line-height: 1; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0 0; }
-.stat { background: rgba(255,255,255,.04); border: 1px solid var(--card-border); border-radius: 16px; padding: 18px; text-align: center; }
-.stat span { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
-@media (max-width: 560px) { .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; } .count { font-size: 28px; } }
 
 /* Update strip */
 .update { grid-area: update; margin: 0 32px 24px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,201,60,.35); background: linear-gradient(135deg, rgba(91,124,255,.12), rgba(255,201,60,.08)); display: grid; grid-template-columns: 1.1fr 1fr; }
