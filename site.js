@@ -114,6 +114,16 @@
     sheet.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
   }
 
+  // Highlight the menu link for the section on screen
+  var links = document.querySelectorAll('.nav a[href^="#"]');
+  if (links.length && 'IntersectionObserver' in window) {
+    var map = {}; links.forEach(function (a) { var s = document.querySelector(a.getAttribute('href')); if (s) map[s.id] = a; });
+    var so = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { var a = map[e.target.id]; if (a) a.classList.toggle('active', e.isIntersecting); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function (id) { so.observe(document.getElementById(id)); });
+  }
+
   // Pause the looping hero and ticker animations while they're off screen
   if ('IntersectionObserver' in window) {
     var po = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); }); });
